@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>屋台メニュー</title>
+    <title>秋のうまいもん市 メニュー</title>
     <style>
         body {
             font-family: 'Arial', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
@@ -24,7 +24,7 @@
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
             width: 90%;
             max-width: 600px;
-            box-sizing: border-box; 
+            box-sizing: border-box;
         }
 
         h1 {
@@ -58,7 +58,7 @@
             display: flex;
             flex-direction: column;
             margin-right: 15px;
-            flex-shrink: 1; 
+            flex-shrink: 1;
         }
 
         .item-name {
@@ -71,7 +71,7 @@
             font-size: 0.9em;
             color: #555;
             margin-top: 5px;
-            line-height: 1.5; 
+            line-height: 1.5;
         }
 
         .item-price {
@@ -81,12 +81,12 @@
             white-space: nowrap;
             margin-left: 20px;
             margin-top: 3px;
-            flex-shrink: 0; 
+            flex-shrink: 0;
         }
 
         .notes {
-            margin-top: 0; 
-            margin-bottom: 20px; 
+            margin-top: 0;
+            margin-bottom: 20px;
             padding: 15px;
             background-color: #fdfdfd;
             border: 1px dashed #aaa;
@@ -108,39 +108,69 @@
             margin: 5px 0 0 0;
         }
 
+        .menu-header {
+            text-align: center;
+            color: #d9534f;
+            font-size: 1.8em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            border-bottom: 2px dashed #f0ad4e;
+            padding-bottom: 8px;
+        }
+
+        li.sold-out .item-details {
+            opacity: 0.5;
+        }
+
+        li.sold-out .item-name,
+        li.sold-out .item-description {
+            color: #aaa;
+            text-decoration: line-through;
+        }
+
+        li.sold-out .item-price {
+            color: #d9534f; 
+        }
+
+
         @media (max-width: 480px) {
             body {
-                margin: 10px; 
+                margin: 10px;
             }
-            
+
             .menu-container {
-                padding: 15px 20px; 
-                width: 100%; 
+                padding: 15px 20px;
+                width: 100%;
             }
 
             h1 {
-                font-size: 2.1em; 
+                font-size: 2.1em;
             }
 
             .item-name {
-                font-size: 1.25em; 
+                font-size: 1.25em;
             }
 
             .item-description {
-                font-size: 0.85em; 
+                font-size: 0.85em;
             }
 
             .item-price {
-                font-size: 1.2em; 
-                margin-left: 10px; 
+                font-size: 1.2em;
+                margin-left: 10px;
             }
 
             .notes h2 {
-                font-size: 1.1em; 
+                font-size: 1.1em;
             }
 
             .notes p {
-                font-size: 0.85em; 
+                font-size: 0.85em;
+            }
+            
+            .menu-header {
+                font-size: 1.6em;
+                margin-top: 20px;
             }
         }
     </style>
@@ -149,14 +179,20 @@
 <body>
 
     <div class="menu-container">
-        <h1>🏮 おしながき 🏮</h1>
+        <h1>秋のうまいもん市</h1>
+
         <div class="notes">
             <h2>🚨 注意事項 🚨</h2>
             <p>・商品はなくなり次第終了です。</p>
             <p>・アレルギーのある方はお声がけください。</p>
             <p>・松茸ご飯は一度の作成量に限りがあるため予約も承っております。<br>　ブースにてお声がけください。</p>
         </div>
+
+        <h2 class="menu-header">🏮 おしながき 🏮</h2>
+
         <ul>
+        <!-- <li class="sold-out"> のように class="sold-out" を追加します。
+        価格（例: 500円）を 完売 に書き換えます。 -->
             <li>
                 <div class="item-details">
                     <span class="item-name">松茸ご飯</span>
