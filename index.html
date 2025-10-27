@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>屋台メニュー</title>
+    <style>
+        body {
+            font-family: 'Arial', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+            background-color: #fffaf0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+            margin: 20px;
+        }
+
+        .menu-container {
+            background-color: #ffffff;
+            border: 3px solid #d9534f;
+            border-radius: 10px;
+            padding: 20px 30px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 600px;
+            box-sizing: border-box; 
+        }
+
+        h1 {
+            text-align: center;
+            color: #d9534f;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            border-bottom: 2px dashed #f0ad4e;
+            padding-bottom: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding: 15px 10px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        .item-details {
+            display: flex;
+            flex-direction: column;
+            margin-right: 15px;
+            flex-shrink: 1; 
+        }
+
+        .item-name {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .item-description {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 5px;
+            line-height: 1.5; 
+        }
+
+        .item-price {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #337ab7;
+            white-space: nowrap;
+            margin-left: 20px;
+            margin-top: 3px;
+            flex-shrink: 0; 
+        }
+
+        .notes {
+            margin-top: 0; 
+            margin-bottom: 20px; 
+            padding: 15px;
+            background-color: #fdfdfd;
+            border: 1px dashed #aaa;
+            border-radius: 5px;
+        }
+
+        .notes h2 {
+            font-size: 1.2em;
+            color: #d9534f;
+            margin-top: 0;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .notes p {
+            font-size: 0.9em;
+            color: #444;
+            line-height: 1.6;
+            margin: 5px 0 0 0;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                margin: 10px; 
+            }
+            
+            .menu-container {
+                padding: 15px 20px; 
+                width: 100%; 
+            }
+
+            h1 {
+                font-size: 2.1em; 
+            }
+
+            .item-name {
+                font-size: 1.25em; 
+            }
+
+            .item-description {
+                font-size: 0.85em; 
+            }
+
+            .item-price {
+                font-size: 1.2em; 
+                margin-left: 10px; 
+            }
+
+            .notes h2 {
+                font-size: 1.1em; 
+            }
+
+            .notes p {
+                font-size: 0.85em; 
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="menu-container">
+        <h1>🏮 おしながき 🏮</h1>
+        <div class="notes">
+            <h2>🚨 注意事項 🚨</h2>
+            <p>・商品はなくなり次第終了です。</p>
+            <p>・アレルギーのある方はお声がけください。</p>
+            <p>・松茸ご飯は一度の作成量に限りがあるため予約も承っております。<br>　ブースにてお声がけください。</p>
+        </div>
+        <ul>
+            <li>
+                <div class="item-details">
+                    <span class="item-name">松茸ご飯</span>
+                    <span class="item-description">秋の味覚の王様！<br>岩手県産松茸を使用した豊かな香りが食欲をそそる、贅沢な炊き込みご飯です。</span>
+                </div>
+                <span class="item-price">500円</span>
+            </li>
+            <li>
+                <div class="item-details">
+                    <span class="item-name">栗ご飯</span>
+                    <span class="item-description">お米の旨味と栗の甘みが口に広がる、秋の定番ご飯。</span>
+                </div>
+                <span class="item-price">400円</span>
+            </li>
+            <li>
+                <div class="item-details">
+                    <span class="item-name">ひっつみ汁</span>
+                    <span class="item-description">岩手の郷土料理！<br>もちもち食感のひっつみと、野菜の旨味が溶け込んだ具沢山アツアツ汁物。</span>
+                </div>
+                <span class="item-price">300円</span>
+            </li>
+            <li>
+                <div class="item-details">
+                    <span class="item-name">炭火焼き鳥 (1本)</span>
+                    <span class="item-description">炭火で一気に焼き上げた香ばしさが自慢！</span>
+                </div>
+                <span class="item-price">100円</span>
+            </li>
+            <li>
+                <div class="item-details">
+                    <span class="item-name">ワッフル</span>
+                    <span class="item-description">食べ歩きにぴったり！</span>
+                </div>
+                <span class="item-price">200円</span>
+            </li>
+            <li>
+                <div class="item-details">
+                    <span class="item-name">ピーマン味噌・紫蘇味噌</span>
+                    <span class="item-description">ご飯にかけたり、キュウリにつけておつまみとしても！<br>手作りのおかず味噌です！</span>
+                </div>
+                <span class="item-price">500円</span>
+            </li>
+        </ul>
+    </div>
+
+</body>
+
+</html>
