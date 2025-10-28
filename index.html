@@ -5,92 +5,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>秋のうまいもん市 メニュー</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
         body {
-            font-family: 'Arial', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+            font-family: 'M PLUS Rounded 1c', 'Arial', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
             background-color: #fffaf0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 90vh;
-            margin: 20px;
+            background-image: linear-gradient(to bottom, #fffaf0, #fff5e6);
+            margin: 0;
+            padding: 20px 10px;
+            box-sizing: border-box;
+            min-height: 100vh;
         }
 
         .menu-container {
             background-color: #ffffff;
-            border: 3px solid #d9534f;
-            border-radius: 10px;
-            padding: 20px 30px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            width: 90%;
+            border: 2px solid #e67e22;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            width: 100%;
             max-width: 600px;
+            margin: 20px auto;
             box-sizing: border-box;
+            overflow: hidden;
         }
 
         h1 {
             text-align: center;
-            color: #d9534f;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            border-bottom: 2px dashed #f0ad4e;
-            padding-bottom: 10px;
+            color: #fff;
+            font-size: 2.4em;
+            margin: -20px -20px 25px -20px;
+            padding: 25px 20px;
+            background: linear-gradient(135deg, #d9534f, #e67e22);
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         }
 
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        li {
-            padding: 15px 10px;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-
-        li:last-child {
-            border-bottom: none;
-        }
-
-        .item-details {
-            display: flex;
-            flex-direction: column;
-            margin-right: 15px;
-            flex-shrink: 1;
-        }
-
-        .item-name {
-            font-size: 1.4em;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .item-description {
-            font-size: 0.9em;
-            color: #555;
-            margin-top: 5px;
-            line-height: 1.5;
-        }
-
-        .item-price {
-            font-size: 1.4em;
-            font-weight: bold;
-            color: #337ab7;
-            white-space: nowrap;
-            margin-left: 20px;
-            margin-top: 3px;
-            flex-shrink: 0;
-        }
-
+        /* --- 注意事項 --- */
         .notes {
-            margin-top: 0;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             padding: 15px;
-            background-color: #fdfdfd;
-            border: 1px dashed #aaa;
-            border-radius: 5px;
+            background-color: #fffaf5;
+            border: 1px dashed #e67e22;
+            border-radius: 8px;
         }
 
         .notes h2 {
@@ -108,20 +68,92 @@
             margin: 5px 0 0 0;
         }
 
+        /* --- おしながき見出し --- */
         .menu-header {
             text-align: center;
-            color: #d9534f;
+            color: #c0392b;
             font-size: 1.8em;
             margin-top: 25px;
-            margin-bottom: 15px;
-            border-bottom: 2px dashed #f0ad4e;
-            padding-bottom: 8px;
+            margin-bottom: 20px;
+            border-bottom: 3px double #f0ad4e;
+            padding-bottom: 10px;
+            font-weight: 700;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 15px 10px;
+            border-bottom: 1px dashed #ddd;
+            position: relative;
+            
+            /* (↓ 変更) transition プロパティを削除 */
+            
+            border-left: 5px solid #f0ad4e;
+            margin-bottom: 10px;
+            background-color: #fdfdfd;
+            border-radius: 0 8px 8px 0;
+        }
+
+        li:last-child {
+            border-bottom: 1px dashed #ddd;
+            margin-bottom: 0;
+        }
+
+        /* (↓ 変更) li:hover ブロックを削除 */
+        
+        .item-details {
+            display: flex;
+            flex-direction: column;
+            margin-right: 15px;
+            flex-grow: 1;
+        }
+
+        .item-name {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .item-description {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 5px;
+            line-height: 1.5;
+        }
+
+        .item-price {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #d9534f;
+            white-space: nowrap;
+            background-color: #fffaf0;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid #f0ad4e;
+            flex-shrink: 0;
+            margin-left: 10px;
+            margin-top: 3px;
+        }
+
+        /* --- 売り切れのスタイル --- */
+        li.sold-out {
+            opacity: 0.7;
+            background-color: #f9f9f9;
+            border-left-color: #ccc;
         }
 
         li.sold-out .item-details {
-            opacity: 0.5;
+            opacity: 0.7;
         }
-
+        
         li.sold-out .item-name,
         li.sold-out .item-description {
             color: #aaa;
@@ -129,26 +161,55 @@
         }
 
         li.sold-out .item-price {
-            color: #d9534f; 
+            display: none;
+        }
+
+        li.sold-out::before {
+            content: "完 売";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            font-size: 2.5em;
+            font-weight: 900;
+            color: #d9534f;
+            border: 5px solid #d9534f;
+            border-radius: 10px;
+            padding: 5px 15px;
+            opacity: 0.8;
+            z-index: 10;
+            letter-spacing: 0.1em;
         }
 
 
+        /* --- スマホ用レスポンシブ調整 --- */
         @media (max-width: 480px) {
             body {
-                margin: 10px;
+                padding: 10px 5px;
             }
 
             .menu-container {
-                padding: 15px 20px;
+                padding: 15px;
                 width: 100%;
+                margin: 10px auto;
             }
 
             h1 {
                 font-size: 2.1em;
+                margin: -15px -15px 20px -15px;
+                padding: 20px 15px;
+            }
+            
+            .menu-header {
+                font-size: 1.6em;
+            }
+            
+            li {
+                padding: 10px;
             }
 
             .item-name {
-                font-size: 1.25em;
+                font-size: 1.15em;
             }
 
             .item-description {
@@ -156,8 +217,8 @@
             }
 
             .item-price {
-                font-size: 1.2em;
-                margin-left: 10px;
+                font-size: 1.1em;
+                padding: 4px 8px;
             }
 
             .notes h2 {
@@ -167,10 +228,9 @@
             .notes p {
                 font-size: 0.85em;
             }
-            
-            .menu-header {
-                font-size: 1.6em;
-                margin-top: 20px;
+
+            li.sold-out::before {
+                font-size: 2em;
             }
         }
     </style>
@@ -182,17 +242,16 @@
         <h1>秋のうまいもん市</h1>
 
         <div class="notes">
-            <h2>🚨 注意事項 🚨</h2>
+            <h2>注意事項</h2>
             <p>・商品はなくなり次第終了です。</p>
             <p>・アレルギーのある方はお声がけください。</p>
             <p>・松茸ご飯は一度の作成量に限りがあるため予約も承っております。<br>　ブースにてお声がけください。</p>
         </div>
 
-        <h2 class="menu-header">🏮 おしながき 🏮</h2>
+        <h2 class="menu-header">おしながき</h2>
 
+        <!-- 完売時はliタグに.sold-out -->
         <ul>
-        <!-- <li class="sold-out"> のように class="sold-out" を追加します。
-        価格（例: 500円）を 完売 に書き換えます。 -->
             <li>
                 <div class="item-details">
                     <span class="item-name">松茸ご飯</span>
@@ -200,6 +259,7 @@
                 </div>
                 <span class="item-price">500円</span>
             </li>
+            
             <li>
                 <div class="item-details">
                     <span class="item-name">栗ご飯</span>
@@ -207,6 +267,7 @@
                 </div>
                 <span class="item-price">400円</span>
             </li>
+            
             <li>
                 <div class="item-details">
                     <span class="item-name">ひっつみ汁</span>
@@ -214,6 +275,7 @@
                 </div>
                 <span class="item-price">300円</span>
             </li>
+            
             <li>
                 <div class="item-details">
                     <span class="item-name">炭火焼き鳥 (1本)</span>
@@ -221,6 +283,7 @@
                 </div>
                 <span class="item-price">100円</span>
             </li>
+            
             <li>
                 <div class="item-details">
                     <span class="item-name">ワッフル</span>
@@ -228,16 +291,7 @@
                 </div>
                 <span class="item-price">200円</span>
             </li>
-            <li>
-                <div class="item-details">
-                    <span class="item-name">ピーマン味噌・紫蘇味噌</span>
-                    <span class="item-description">ご飯にかけたり、キュウリにつけておつまみとしても！<br>手作りのおかず味噌です！</span>
-                </div>
-                <span class="item-price">500円</span>
-            </li>
         </ul>
-    </div>
-
-</body>
+    </div> </body>
 
 </html>
