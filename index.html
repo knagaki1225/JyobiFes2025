@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
-    
+
     <style>
         body {
             font-family: 'M PLUS Rounded 1c', 'Arial', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
@@ -41,7 +41,7 @@
             padding: 25px 20px;
             background: linear-gradient(135deg, #d9534f, #e67e22);
             font-weight: 700;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
 
         /* --- 注意事項 --- */
@@ -93,9 +93,9 @@
             padding: 15px 10px;
             border-bottom: 1px dashed #ddd;
             position: relative;
-            
+
             /* (↓ 変更) transition プロパティを削除 */
-            
+
             border-left: 5px solid #f0ad4e;
             margin-bottom: 10px;
             background-color: #fdfdfd;
@@ -108,7 +108,7 @@
         }
 
         /* (↓ 変更) li:hover ブロックを削除 */
-        
+
         .item-details {
             display: flex;
             flex-direction: column;
@@ -153,7 +153,7 @@
         li.sold-out .item-details {
             opacity: 0.7;
         }
-        
+
         li.sold-out .item-name,
         li.sold-out .item-description {
             color: #aaa;
@@ -199,11 +199,11 @@
                 margin: -15px -15px 20px -15px;
                 padding: 20px 15px;
             }
-            
+
             .menu-header {
                 font-size: 1.6em;
             }
-            
+
             li {
                 padding: 10px;
             }
@@ -233,6 +233,16 @@
                 font-size: 2em;
             }
         }
+
+        /* --- 開催教室 --- */
+        .event-location {
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #444;
+            margin-top: -15px;
+            margin-bottom: 25px;
+        }
     </style>
 </head>
 
@@ -240,6 +250,7 @@
 
     <div class="menu-container">
         <h1>秋のうまいもん市</h1>
+        <p class="event-location">開催教室: システムIT館 ３１２教室</p>
 
         <div class="notes">
             <h2>注意事項</h2>
@@ -259,7 +270,7 @@
                 </div>
                 <span class="item-price">500円</span>
             </li>
-            
+
             <li>
                 <div class="item-details">
                     <span class="item-name">栗ご飯</span>
@@ -267,7 +278,7 @@
                 </div>
                 <span class="item-price">400円</span>
             </li>
-            
+
             <li>
                 <div class="item-details">
                     <span class="item-name">ひっつみ汁</span>
@@ -275,15 +286,15 @@
                 </div>
                 <span class="item-price">300円</span>
             </li>
-            
+
             <li>
                 <div class="item-details">
-                    <span class="item-name">炭火焼き鳥 (1本)</span>
-                    <span class="item-description">炭火で一気に焼き上げた香ばしさが自慢！</span>
+                    <span class="item-name">焼き鳥 (1本)</span>
+                    <span class="item-description">安さと美味しさが自慢の焼き鳥！</span>
                 </div>
                 <span class="item-price">100円</span>
             </li>
-            
+
             <li>
                 <div class="item-details">
                     <span class="item-name">ワッフル</span>
@@ -292,6 +303,7 @@
                 <span class="item-price">200円</span>
             </li>
         </ul>
-    </div> </body>
+    </div>
+</body>
 
 </html>
