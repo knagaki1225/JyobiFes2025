@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アレルギー情報 - 秋のうまいもん市</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'M PLUS Rounded 1c', 'Arial', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+            background-color: #fffaf0;
+            background-image: linear-gradient(to bottom, #fffaf0, #fff5e6);
+            margin: 0;
+            padding: 20px 10px;
+            box-sizing: border-box;
+            min-height: 100vh;
+        }
+
+        .menu-container {
+            background-color: #ffffff;
+            border: 2px solid #e67e22;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            font-size: 2.2em; /* 少し小さめに調整 */
+            margin: -20px -20px 25px -20px;
+            padding: 25px 20px;
+            background: linear-gradient(135deg, #3498db, #2980b9); /* 色を変更してメニューと区別 */
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        /* --- 注意事項 --- */
+        .notes {
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: #f5faff; /* 色を変更 */
+            border: 1px dashed #3498db; /* 色を変更 */
+            border-radius: 8px;
+        }
+
+        .notes h2 {
+            font-size: 1.2em;
+            color: #2980b9; /* 色を変更 */
+            margin-top: 0;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .notes p {
+            font-size: 0.9em;
+            color: #444;
+            line-height: 1.6;
+            margin: 5px 0 0 0;
+        }
+        
+        .notes p.warning {
+            font-weight: 700;
+            color: #d9534f;
+        }
+
+        /* --- アレルギー情報リスト --- */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            display: flex;
+            flex-direction: column; /* 縦積みに変更 */
+            align-items: flex-start;
+            padding: 15px 10px;
+            border-bottom: 1px dashed #ddd;
+            border-left: 5px solid #3498db; /* 色を変更 */
+            margin-bottom: 10px;
+            background-color: #fdfdfd;
+            border-radius: 0 8px 8px 0;
+        }
+
+        li:last-child {
+            border-bottom: 1px dashed #ddd;
+            margin-bottom: 0;
+        }
+
+        .item-name {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .allergen-info {
+            font-size: 1em;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* アレルゲン（特定原材料7品目）を強調 */
+        .allergen-info .highlight {
+            font-weight: 700;
+            color: #d9534f;
+            background-color: #fffaf0;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        
+        .allergen-info .no-allergen {
+            color: #27ae60;
+            font-weight: 700;
+        }
+
+        /* --- 戻るボタン --- */
+        .back-link {
+            display: block;
+            width: 100%;
+            max-width: 250px;
+            margin: 30px auto 10px auto;
+            padding: 12px 15px;
+            background-color: #e67e22;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 8px;
+            font-size: 1.1em;
+            box-sizing: border-box;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .back-link:hover {
+            background-color: #d35400;
+            transform: translateY(-2px);
+        }
+
+        /* --- スマホ用レスポンシブ調整 --- */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px 5px;
+            }
+
+            .menu-container {
+                padding: 15px;
+                width: 100%;
+                margin: 10px auto;
+            }
+
+            h1 {
+                font-size: 1.9em;
+                margin: -15px -15px 20px -15px;
+                padding: 20px 15px;
+            }
+
+            .item-name {
+                font-size: 1.15em;
+            }
+
+            .allergen-info {
+                font-size: 0.9em;
+            }
+
+            .notes h2 {
+                font-size: 1.1em;
+            }
+
+            .notes p {
+                font-size: 0.85em;
+            }
+            
+            .back-link {
+                font-size: 1em;
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="menu-container">
+        <h1>アレルギー情報</h1>
+
+        <div class="notes">
+            <h2>ご案内</h2>
+            <p class="warning">
+                ※すべて同一ライン上で調理しています。<br>
+                ※ご心配な点がある方、詳細情報が必要な方は、お気軽にブースのスタッフまでお声がけください。
+            </p>
+        </div>
+
+        <ul>
+            <li>
+                <span class="item-name">松茸ご飯</span>
+                <span class="allergen-info">
+                    <span class="highlight">大豆</span>・<span class="highlight">小麦</span>
+                </span>
+            </li>
+
+            <li>
+                <span class="item-name">栗ご飯</span>
+                <span class="allergen-info">
+                    <span class="highlight">ごま</span>
+                </span>
+            </li>
+
+            <li>
+                <span class="item-name">ひっつみ汁</span>
+                <span class="allergen-info">
+                    <span class="highlight">大豆</span>・<span class="highlight">小麦</span>・<span class="highlight">鶏肉</span>
+                </span>
+            </li>
+
+            <li>
+                <span class="item-name">焼き鳥 (1本)</span>
+                <span class="allergen-info">
+                    <span class="highlight">小麦</span>・<span class="highlight">大豆</span>・<span class="highlight">鶏肉</span>
+                </span>
+            </li>
+
+            <li>
+                <span class="item-name">ワッフル</span>
+                <span class="allergen-info">
+                    <span class="highlight">小麦</span>・<span class="highlight">卵</span>・<span class="highlight">乳</span>・<span class="highlight">大豆</span>
+                </span>
+            </li>
+        </ul>
+
+        <a href="index.html" class="back-link">メニューに戻る</a>
+    </div>
+</body>
+
+</html>
